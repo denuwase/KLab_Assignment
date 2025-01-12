@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+</head>
+<body>
+    <h1>Project List</h1>
+    <div id="projectList"></div>
+
+    <script>
+        const projects = [
+            {
+                name: "eBuzima Health System",
+                description: "A healthcare management system for tracking and managing electronic medical records.",
+                technologyUsed: ["JavaScript", "Node.js", "MongoDB", "React"],
+                year: 2023
+            },
+            {
+                name: "Portfolio Website",
+                description: "A personal portfolio showcasing my skills, projects, and achievements.",
+                technologyUsed: ["HTML", "CSS", "JavaScript"],
+                year: 2024
+            },
+            {
+                name: "Virtual Assistant Dashboard",
+                description: "A dashboard for managing virtual assistant tasks and scheduling.",
+                technologyUsed: ["Python", "Flask", "SQLite"],
+                year: 2025
+            },
+            {
+                name: "Debate Tracker",
+                description: "An app for managing debate competitions and tracking participants' scores.",
+                technologyUsed: ["Angular", "TypeScript", "Firebase"],
+                year: 2024
+            }
+        ];
+
+        const projectListHTML = projects.map(project => {
+            return `
+                <div>
+                    <h3>${project.name} (${project.year})</h3>
+                    <p>${project.description}</p>
+                    <p><strong>Technologies used:</strong> ${project.technologyUsed.join(", ")}</p>
+                </div>
+            `;
+        }).join(""); // join the array to a single string of HTML
+
+        // Insert the project list HTML into the DOM
+        document.getElementById("projectList").innerHTML = projectListHTML;
+    </script>
+</body>
+</html>
